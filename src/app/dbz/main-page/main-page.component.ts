@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { NOMEM } from 'dns';
 import { Personaje } from '../interfaces/dbz.interfaces';
 
 @Component({
@@ -22,7 +21,9 @@ export class MainPageComponent  {
       nombre:'Maestro Roshi',
       poder:1000
     }
-
+    agregarNuevoPersonaje(argumento:Personaje){
+     this.personajes.push(argumento);
+    }
 
     
 }
