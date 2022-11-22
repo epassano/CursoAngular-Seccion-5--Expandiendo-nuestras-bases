@@ -1,3 +1,4 @@
+import { ThrowStmt } from '@angular/compiler';
 import { Component, Input } from '@angular/core';
 import { Personaje } from '../interfaces/dbz.interfaces';
 import { DbzService } from '../services/dbz.services';
@@ -7,8 +8,11 @@ import { DbzService } from '../services/dbz.services';
   templateUrl: './personajes.component.html'
 })
 export class PersonajesComponent  {
- @Input() personajes:Personaje[]=[];
- 
+//  @Input() personajes:Personaje[]=[];
+ get personajes(){
+  return this.dbzService.personajes;
+ }
  constructor(private dbzService:DbzService){}
+ 
 }
 
